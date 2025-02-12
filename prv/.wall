@@ -1,0 +1,4 @@
+#!/bin/bash
+wall=$(cat /home/delta/.config/variety/wallpaper/wallpaper.jpg.txt)
+swaybg -m fill -i "$wall"
+

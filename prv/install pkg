@@ -1,0 +1,19 @@
+sudo pacman -S bluez
+sudo pacman -S bluez-utils
+sudo pacman -S blueman
+sudo vim /etc/bluetooth/main.conf
+ sudo systemctl start bluetooth.service
+ sudo systemctl enable bluetooth.service
+yay  -S telegram-desktop
+sudo pacman -S qemu virt-manager virt-viewer dnsmasq vde2 bridge-utils openbsd-netcat
+ sudo pacman -S libguestfs
+  sudo systemctl enable libvirtd.service
+  sudo systemctl start libvirtd.service
+   sudo vim /etc/libvirt/libvirtd.conf +85
+   groupadd libvirt
+   unix_sock_group = "libvirt"
+ vim  /etc/libvirt/libvirtd.conf 
+  sudo usermod -a -G libvirt $(whoami)
+    unix_sock_rw_perms = "0770"
+   newgrp libvirt
+  yay  -S aur/teams-for-linux-git

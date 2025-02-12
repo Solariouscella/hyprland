@@ -1,0 +1,226 @@
+
+#
+# Please note not all available settings / options are set here.
+# For a full list, see the wiki
+#
+# info at https://wiki.hyprland.org/
+
+# See https://wiki.hyprland.org/Configuring/Keywords/ for more
+# Setting variables
+
+$term -> kitty
+$menu -> $scriptsDir/menu
+$fullmenu -> $scriptsDir/fullmenu
+$powermenu -> $scriptsDir/powermenu
+$volume -> $scriptsDir/volume
+$backlight -> $scriptsDir/brightness
+$screenshot -> $scriptsDir/screenshot
+$lock -> $scriptsDir/lockscreen
+$colorpicker -> $scriptsDir/colorpicker
+$wofi_beats -> $scriptsDir/wofi-beats
+$files -> thunar
+$browser -> firefox
+$editor -> code
+
+# Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
+#hyperland reload
+-> SUPER SHIFT, R, =>, hyprctl reload
+#fullmenu
+-> SUPER SHIFT, D, =>, $fullmenu
+#menu
+-> SUPER, D, =>, $menu
+#kill
+-> SUPER SHIFT, Q, killactive, 
+#filemaager
+-> SUPER SHIFT, Return, =>, $files
+#splitwindow
+-> SUPER SHIFT, Space, togglefloating, 
+#widget
+-> SUPER, C, =>, conky-toggle
+#ide
+-> SUPER, E, =>, code
+#fullscreen
+-> SUPER, F, fullscreen
+#kill
+-> SUPER, Q, killactive,
+#rofi theme
+-> SUPER, R, =>, rofi-theme-selector
+#terminal
+-> SUPER, Return, =>, $term
+-> SUPER, T, =>, $term
+#soundcontroller
+-> SUPER, V, =>, pavucontrol
+#appfinder
+-> CTRL ALT, A, =>, xfce4-appfinder
+#file search
+-> CTRL ALT, C, =>, catfish
+#filemanager
+-> CTRL ALT, B, =>, thunar
+#tweak-tool
+-> CTRL ALT, E, =>, archlinux-tweak-tool
+#firefox
+-> CTRL ALT, F, =>, firefox
+#chromium browser
+-> CTRL ALT, G, =>, chromium -no-default-browser-check
+#img
+-> CTRL ALT, I, =>, nitrogen
+#lock screen
+-> CTRL ALT, K, =>, $scriptsDir/lockscreen
+-> CTRL ALT, L, =>, $scriptsDir/lockscreen
+
+-> CTRL ALT, NEXT, =>, conky-rotate -n
+#software finder
+-> CTRL ALT, P, =>, pamac-manager
+
+-> CTRL ALT, PREVIOUS, =>, conky-rotate -p
+-> CTRL ALT, R, =>, rofi-theme-selector
+#terminal
+-> CTRL ALT, Return, =>, foot
+#spotify music
+-> CTRL ALT, S, =>, spotify
+#terminal
+-> CTRL ALT, T, =>, $term
+#audio controll
+-> CTRL ALT, U, =>, pavucontrol
+
+-> CTRL ALT, V, =>, vivaldi-stable
+-> CTRL ALT, W, =>, arcolinux-welcome-app
+
+-> CTRL SHIFT, Escape,=>, $term --class bashtop -T bashtop -e bashtop
+
+# change wallpaper
+#-> ALT, n, =>, $scriptsDir/changeWallpaper
+#-> ALT, p, =>, $scriptsDir/changeWallpaper
+#-> ALT, left, =>, $scriptsDir/changeWallpaper
+#-> ALT, right, =>, $scriptsDir/changeWallpaper
+#-> ALT, up, =>, $scriptsDir/changeWallpaperDesktop
+#-> ALT, down, =>, $scriptsDir/changeWallpaperDesktop
+
+# Variety
+# trash wallpaper
+ALT, t, =>, variety -t
+# next wallpaper
+-> ALT, n, =>, variety -n
+-> ALT, right, =>, variety -n
+# previous wallpaper
+-> ALT, p, =>, variety -p
+-> ALT, left, =>, variety -p
+# favorite wallpaper
+-> ALT, f, =>, variety -f
+# pause wallpaper
+-> ALT, up, =>, variety --pause
+# resume wallpaper
+-> ALT, down, =>, variety --resume
+
+# effect  blur
+-> ALT, g, =>, $scriptsDir/glassmorphismToggle
+#appfiner
+-> ALT, F1, =>, xfce4-appfinder
+#terminal
+-> , F12, =>, xfce4-terminal --drop-down
+
+-> SUPER SHIFT, M, =>, hyprctl dispatch splitratio -0.3
+#watch cntr
+-> SUPER SHIFT, Y, =>, $term --class clock -T clock -e tty-clock -c -C 7 -r -s -f "%A, %B, %d"
+#menu
+-> SUPER, D, layoutmsg, removemaster
+#kill
+-> SUPER, Escape, =>, hyprctl kill
+
+-> SUPER, I, layoutmsg, addmaster
+-> SUPER, J, layoutmsg, cyclenext
+-> SUPER, K, layoutmsg, cycleprev
+-> SUPER, M, =>, hyprctl dispatch splitratio 0.3
+-> SUPER, P, pseudo, # dwindle
+-> SUPER CTRL, Return, layoutmsg, swapwithmaster
+#split
+-> SUPER, Space, =>, $scriptsDir/changeLayout
+#logout
+-> SUPER, X, =>, archlinux-logout
+#clock 
+-> SUPER, Y, =>, $term --class update -T update -e cava
+
+# Mainmod + Function keys
+-> SUPER, F1, =>, $browser
+-> SUPER, F2, =>, $editor
+-> SUPER, F3, =>, inkscape
+-> SUPER, F4, =>, gimp
+-> SUPER, F5, =>, meld
+-> SUPER, F6, =>, vlc
+-> SUPER, F7, =>, virtualbox
+-> SUPER, F8, =>, $files
+-> SUPER, F9, =>, evolution
+-> SUPER, F10, =>, spotify
+-> SUPER, F11, =>, rofi -show drun
+-> SUPER, F12, =>, rofi -show drun
+
+
+
+# Resize
+-> SUPER SHIFT, H, resizeactive,-50 0
+-> SUPER SHIFT, L, resizeactive,50 0
+-> SUPER SHIFT, K, resizeactive,0 -50
+-> SUPER SHIFT, J, resizeactive,0 50
+
+# Move
+# Move left 
+-> SUPER CTRL, H, movewindow, l  
+#move right 
+-> SUPER CTRL, L, movewindow, r
+#Move up
+-> SUPER CTRL, K, movewindow, u
+#move down
+-> SUPER CTRL, J, movewindow, d
+
+# Move focus with mainMod + arrow keys
+-> SUPER, left, movefocus, l
+-> SUPER, right, movefocus, r
+-> SUPER, up, movefocus, u
+-> SUPER, down, movefocus, d
+
+# Special workspace
+-> SUPER SHIFT, U, movetoworkspace, special
+-> SUPER, U, togglespecialworkspace,
+
+-> SUPER SHIFT, bracketleft, movetoworkspacesilent, -1
+-> SUPER SHIFT, bracketright, movetoworkspacesilent, +1
+
+# Scroll through existing workspaces with mainMod + scroll
+-> SUPER, mouse_down, workspace, e+1
+-> SUPER, mouse_up, workspace, e-1
+-> SUPER, period, workspace, e+1
+-> SUPER, comma, workspace, e-1
+
+# Move/resize windows with mainMod + LMB/RMB and dragging
+-> SUPER, mouse:272, movewindow
+-> SUPER, mouse:273, resizewindow
+#floating
+-> SUPER, G, togglegroup
+#shift workspaceup
+-> SUPER, tab, workspace, m+1
+#shift workscpacedown
+-> SUPER SHIFT, tab, workspace, m-1
+#shifit workspaceup
+-> ALT, tab, workspace, m+1
+#shift workspacedown
+-> ALT SHIFT, tab, workspace, m-1
+#color picker
+-> SUPER, O, =>, $colorpicker
+
+-> SUPER SHIFT, O, =>, $term --class hyprpicker --hold -e hyprpicker
+#soundbar
+-> SUPER CTRL, S, =>, $wofi_beats
+
+# Screenshot keybindings
+-> , Print, =>, $screenshot --now
+-> SUPER, Print, =>, $screenshot --in5
+-> SHIFT, Print, =>, $screenshot --in10
+-> CTRL, Print, =>, $screenshot --win
+-> SUPER CTRL, Print, =>, $screenshot --area
+#bluetooth pair
+-> SUPER, b, =>, /usr/bin/blueman-manager
+##screen light 
+#light up 
+bind = ALT, F3 , exec,  /usr/bin/brillo -q  -A 10
+#light down
+bind = ALT, F2 , exec,  /usr/bin/brillo -q  -U 10
